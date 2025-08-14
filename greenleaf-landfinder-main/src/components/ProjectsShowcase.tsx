@@ -16,7 +16,7 @@ const ProjectsShowcase = () => {
       completedDate: 'March 2024',
       description: 'Premium residential plots with modern infrastructure and sustainable design principles.',
       highlights: ['RERA Approved', 'Gated Community', 'Solar Powered'],
-      image: '/src/assets/property-1.jpg'
+      image: '/assets/hero-land-DVXJ6_M5.jpg'
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ const ProjectsShowcase = () => {
       expectedCompletion: 'Q4 2024',
       description: 'State-of-the-art commercial complex designed for tech companies and startups.',
       highlights: ['Smart Infrastructure', 'Green Building', 'Metro Connectivity'],
-      image: '/src/assets/office-building.jpg'
+      image: '/assets/hero-land-DVXJ6_M5.jpg'
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ const ProjectsShowcase = () => {
       expectedCompletion: 'Q2 2025',
       description: 'Sustainable township with residential plots, commercial spaces, and recreational facilities.',
       highlights: ['Zero Waste', 'Rainwater Harvesting', 'Organic Farming'],
-      image: '/src/assets/hero-land.jpg'
+      image: '/assets/hero-land-DVXJ6_M5.jpg'
     }
   ];
 
@@ -63,14 +63,15 @@ const ProjectsShowcase = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project) => (
             <Card key={project.id} className="property-card border-0 bg-card/50 backdrop-blur-sm overflow-hidden group">
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute top-4 left-4">
                   <Badge 

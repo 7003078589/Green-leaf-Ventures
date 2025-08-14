@@ -30,17 +30,17 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-gradient-to-r from-white/90 via-white/80 to-white/70 backdrop-blur-sm'
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
+      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg border-gray-200' : 'bg-gradient-to-r from-white/90 via-white/80 to-white/70 backdrop-blur-sm border-transparent'
     }`}>
       <div className="container-max px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img 
               src="/lovable-uploads/GVL_LOGO_page-0003.png" 
               alt="Green Leaf Ventures" 
-              className="h-18 w-auto sm:h-20 lg:h-28 object-contain transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-lg"
+              className="h-12 w-auto sm:h-16 lg:h-24 object-contain transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-lg"
             />
           </Link>
 
