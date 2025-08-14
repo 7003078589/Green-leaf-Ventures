@@ -2,8 +2,36 @@
   publish = "dist"
   command = "npm run build"
 
+# Handle SPA routing - redirect all routes to index.html
 [[redirects]]
   from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
+
+# Explicit redirects for common routes
+[[redirects]]
+  from = "/services"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/projects"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/insights"
   to = "/index.html"
   status = 200
 
