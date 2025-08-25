@@ -80,11 +80,11 @@ const HeroSection = () => {
             </Button>
             <button 
               type="button"
-              className="px-8 py-6 text-lg font-semibold border-2 border-white text-white hover:bg-white hover:text-primary min-w-[200px] h-[60px] bg-transparent rounded-md transition-all duration-300 flex items-center justify-center"
+              className="px-8 py-6 text-lg font-semibold border-2 border-white text-white hover:bg-accent hover:border-accent hover:text-white min-w-[200px] h-[60px] bg-transparent rounded-md transition-all duration-300 flex items-center justify-center group"
               onClick={scrollToProperties}
             >
               Browse Land
-              <MapPin className="w-5 h-5 ml-2" />
+              <MapPin className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-300" />
             </button>
           </div>
 

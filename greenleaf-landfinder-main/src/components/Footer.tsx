@@ -49,13 +49,13 @@ const Footer = () => {
             <div className="flex flex-col space-y-3">
               <Button 
                 variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-primary justify-start"
+                className="border-white text-white hover:bg-accent hover:border-accent hover:text-white justify-start transition-all duration-300 group"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   contactSection?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                <Phone className="w-4 h-4 mr-3" />
+                <Phone className="w-4 h-4 mr-3 group-hover:scale-110 transition-transform duration-300" />
                 Schedule Call
               </Button>
             </div>
