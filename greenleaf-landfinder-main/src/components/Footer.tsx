@@ -48,8 +48,7 @@ const Footer = () => {
 
             <div className="flex flex-col space-y-3">
               <Button 
-                variant="outline" 
-                className="border-white text-white hover:bg-accent hover:border-accent hover:text-white justify-start transition-all duration-300 group"
+                className="bg-accent text-white border-accent hover:bg-accent/90 hover:border-accent/90 justify-start transition-all duration-300 group shadow-lg hover:shadow-xl"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   contactSection?.scrollIntoView({ behavior: 'smooth' });
