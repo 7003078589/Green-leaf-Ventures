@@ -53,8 +53,8 @@ const Contact = () => {
       title: "Visit Our Office",
       details: [
         "Green Leaf Ventures Realty",
-        "123 Brigade Road, MG Road",
-        "Bangalore, Karnataka 560001"
+        "24, Jaya Enclave, 3rd Floor, 1st Main Rd, Sadashivanagar",
+        "Bengaluru 560003, Karnataka"
       ]
     },
     {

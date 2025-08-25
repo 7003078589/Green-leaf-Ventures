@@ -103,7 +103,7 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                 <div>
                   <div className="text-sm font-medium">Office Location</div>
-                  <div className="text-sm text-white/80">Bangalore, Karnataka, India</div>
+                  <div className="text-sm text-white/80">24, Jaya Enclave, 3rd Floor, 1st Main Rd, Sadashivanagar, Bengaluru 560003, Karnataka</div>
                 </div>
               </div>
 

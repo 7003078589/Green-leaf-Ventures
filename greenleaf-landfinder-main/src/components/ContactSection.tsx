@@ -205,7 +205,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <div className="font-semibold mb-1">Office</div>
-                      <div className="opacity-90">Bangalore, Karnataka</div>
+                      <div className="opacity-90">24, Jaya Enclave, 3rd Floor, 1st Main Rd, Sadashivanagar, Bengaluru 560003, Karnataka</div>
                       <div className="text-sm opacity-75">Visit by appointment</div>
                     </div>
                   </div>
