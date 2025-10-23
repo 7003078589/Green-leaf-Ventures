@@ -133,12 +133,12 @@ const About = () => {
                 <CardContent className="p-0">
                   <div className="relative h-64 overflow-hidden bg-gray-100">
                     <img 
-                      src="/src/assets/WhatsApp Image 2025-10-23 at 3.31.23 PM.jpeg" 
-                      alt="Partner 1"
+                      src="/sujith-ms.jpg" 
+                      alt="Sujith MS"
                       className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                       style={{ objectPosition: 'center 30%' }}
                       onError={(e) => {
-                        e.currentTarget.src = '/src/assets/hero-land.jpg';
+                        e.currentTarget.src = '/hero-land.jpg';
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -160,12 +160,12 @@ const About = () => {
                 <CardContent className="p-0">
                   <div className="relative h-64 overflow-hidden bg-gray-100">
                     <img 
-                      src="/src/assets/WhatsApp Image 2025-10-23 at 3.31.46 PM.jpeg" 
-                      alt="Partner 2"
+                      src="/mahesh-bs.jpg" 
+                      alt="Mahesh BS"
                       className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                       style={{ objectPosition: 'center 20%' }}
                       onError={(e) => {
-                        e.currentTarget.src = '/src/assets/hero-land.jpg';
+                        e.currentTarget.src = '/hero-land.jpg';
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
