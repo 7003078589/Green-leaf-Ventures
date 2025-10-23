@@ -16,7 +16,7 @@ const ProjectsShowcase = () => {
       completedDate: 'March 2024',
       description: 'Premium residential plots with modern infrastructure and sustainable design principles.',
       highlights: ['RERA Approved', 'Gated Community', 'Solar Powered'],
-      image: '/src/assets/hero-land.jpg'
+      image: '/hero-land.jpg'
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ const ProjectsShowcase = () => {
       expectedCompletion: 'Q4 2024',
       description: 'State-of-the-art commercial complex designed for tech companies and startups.',
       highlights: ['Smart Infrastructure', 'Green Building', 'Metro Connectivity'],
-      image: '/src/assets/hero-land.jpg'
+      image: '/hero-land.jpg'
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ const ProjectsShowcase = () => {
       expectedCompletion: 'Q2 2025',
       description: 'Sustainable township with residential plots, commercial spaces, and recreational facilities.',
       highlights: ['Zero Waste', 'Rainwater Harvesting', 'Organic Farming'],
-      image: '/src/assets/hero-land.jpg'
+      image: '/hero-land.jpg'
     }
   ];
 
