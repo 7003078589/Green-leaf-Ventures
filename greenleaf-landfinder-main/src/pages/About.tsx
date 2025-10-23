@@ -93,20 +93,100 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl p-8 h-80 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Award className="w-10 h-10 text-primary" />
+              <div className="relative rounded-xl p-8 h-80 overflow-hidden">
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                  style={{
+                    backgroundImage: `url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')`
+                  }}
+                ></div>
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-accent/80"></div>
+                <div className="relative z-10 flex flex-col h-full justify-center items-center text-center">
+                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Award className="w-10 h-10 text-white" />
                   </div>
-                  <div className="text-lg font-semibold">Excellence in Service</div>
+                  <h3 className="text-xl font-bold text-white mb-3">Our Vision</h3>
+                  <p className="text-sm text-white/90 leading-relaxed max-w-xs">
+                    To become Karnataka's most trusted real estate partner, transforming land acquisition into seamless success stories for every client.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Team Section */}
+        {/* Leadership Section */}
         <section className="section-padding bg-muted/20">
+          <div className="container-max">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Our Leadership</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Meet the visionaries behind Green Leaf Ventures Realty, bringing decades of combined experience in real estate.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {/* Partner 1 */}
+              <Card className="text-center overflow-hidden group hover:shadow-lg transition-all duration-300">
+                <CardContent className="p-0">
+                  <div className="relative h-64 overflow-hidden bg-gray-100">
+                    <img 
+                      src="/src/assets/WhatsApp Image 2025-10-23 at 3.31.23 PM.jpeg" 
+                      alt="Partner 1"
+                      className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                      style={{ objectPosition: 'center 30%' }}
+                      onError={(e) => {
+                        e.currentTarget.src = '/src/assets/hero-land.jpg';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <h3 className="font-bold text-xl mb-1">Sujith MS</h3>
+                      <p className="text-sm opacity-90">Co-Founder & Managing Partner</p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      With over 15 years in real estate development, brings deep expertise in land acquisition and regulatory compliance.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Partner 2 */}
+              <Card className="text-center overflow-hidden group hover:shadow-lg transition-all duration-300">
+                <CardContent className="p-0">
+                  <div className="relative h-64 overflow-hidden bg-gray-100">
+                    <img 
+                      src="/src/assets/WhatsApp Image 2025-10-23 at 3.31.46 PM.jpeg" 
+                      alt="Partner 2"
+                      className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                      style={{ objectPosition: 'center 20%' }}
+                      onError={(e) => {
+                        e.currentTarget.src = '/src/assets/hero-land.jpg';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <h3 className="font-bold text-xl mb-1">Mahesh BS</h3>
+                      <p className="text-sm opacity-90">Co-Founder & Operations Director</p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      Specializes in commercial real estate and has successfully executed over 200 land transactions across Karnataka.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="section-padding">
           <div className="container-max">
             <div className="text-center mb-12">
               <h2 className="text-2xl sm:text-3xl font-bold mb-4">Meet Our Team</h2>
