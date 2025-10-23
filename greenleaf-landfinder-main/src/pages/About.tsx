@@ -117,7 +117,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Leadership Section */}
+        {/* Leadership Section - Updated for Netlify */}
         <section className="section-padding bg-muted/20">
           <div className="container-max">
             <div className="text-center mb-12">
