@@ -128,8 +128,11 @@ const About = () => {
                     </div>
                   </div>
                   <div className="p-6">
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                      Over 15 years in real estate expert in procuring lands, mainly in North Bangalore.
+                    </p>
                     <p className="text-muted-foreground text-sm leading-relaxed">
-                      With over 15 years in real estate development, brings deep expertise in land acquisition and regulatory compliance.
+                      Worked closely with top builders of Bangalore like Purvankara, Prestige, Century MRG etc.
                     </p>
                   </div>
                 </CardContent>
@@ -155,8 +158,11 @@ const About = () => {
                     </div>
                   </div>
                   <div className="p-6">
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                      Was a senior managing partner at a top real estate firm based in Central Bangalore focused in commercial and residential development and sales.
+                    </p>
                     <p className="text-muted-foreground text-sm leading-relaxed">
-                      Specializes in commercial real estate and has successfully executed over 200 land transactions across Karnataka.
+                      Quit job to start own business with all the knowledge from corporate job.
                     </p>
                   </div>
                 </CardContent>
