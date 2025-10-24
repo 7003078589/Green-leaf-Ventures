@@ -7,42 +7,42 @@ const ProjectsShowcase = () => {
   const projects = [
     {
       id: 1,
-      title: 'Green Valley Residential',
-      location: 'Bangalore North',
+      title: "Industrial Land Development - Tumkur",
+      location: "Tumkur, Karnataka",
       status: 'completed',
-      type: 'Residential Development',
-      area: '25 Acres',
-      units: '180 Plots',
-      completedDate: 'March 2024',
-      description: 'Premium residential plots with modern infrastructure and sustainable design principles.',
-      highlights: ['RERA Approved', 'Gated Community', 'Solar Powered'],
-      image: '/hero-land.jpg'
+      type: 'Industrial',
+      area: '50 Acres',
+      units: 'Industrial Plots',
+      completedDate: 'February 2024',
+      description: '50-acre industrial plot with clean title and highway access',
+      highlights: ['Clean Title', 'Highway Access', 'Industrial Zoning'],
+      image: '/Industrial Land Development - Tumkur.jpg'
     },
     {
       id: 2,
-      title: 'Tech Park Commercial Hub',
-      location: 'Electronic City, Bangalore',
-      status: 'ongoing',
-      type: 'Commercial Development',
-      area: '15 Acres',
-      units: '12 Commercial Blocks',
-      expectedCompletion: 'Q4 2024',
-      description: 'State-of-the-art commercial complex designed for tech companies and startups.',
-      highlights: ['Smart Infrastructure', 'Green Building', 'Metro Connectivity'],
-      image: '/hero-land.jpg'
+      title: "Residential Plot Acquisition - Sarjapur",
+      location: "Sarjapur, Bangalore",
+      status: 'completed',
+      type: 'Residential',
+      area: '25 Acres',
+      units: 'Premium Plots',
+      completedDate: 'January 2024',
+      description: 'Premium residential plots with BMRDA approval',
+      highlights: ['BMRDA Approved', 'Premium Location', 'Clean Title'],
+      image: '/Residential Plot Acquisition - Sarjapur.jpeg'
     },
     {
       id: 3,
-      title: 'Eco-Friendly Township',
-      location: 'Mysore Road, Bangalore',
-      status: 'ongoing',
-      type: 'Mixed Development',
-      area: '40 Acres',
-      units: '300 Units',
-      expectedCompletion: 'Q2 2025',
-      description: 'Sustainable township with residential plots, commercial spaces, and recreational facilities.',
-      highlights: ['Zero Waste', 'Rainwater Harvesting', 'Organic Farming'],
-      image: '/hero-land.jpg'
+      title: "Agricultural Land Conversion - Kolar",
+      location: "Kolar, Karnataka",
+      status: 'completed',
+      type: 'Agricultural',
+      area: '200 Acres',
+      units: 'Agricultural Land',
+      completedDate: 'December 2023',
+      description: '200-acre agricultural land with conversion potential',
+      highlights: ['Conversion Potential', 'Large Area', 'Agricultural Zoning'],
+      image: '/Agricultural Land Conversion - Kolar.jpg'
     }
   ];
 
