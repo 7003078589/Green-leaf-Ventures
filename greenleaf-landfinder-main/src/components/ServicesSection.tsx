@@ -11,7 +11,8 @@ const ServicesSection = () => {
       subtitle: 'Curated parcels with clean titles and clear access.',
       description: 'We identify and evaluate premium land opportunities with comprehensive due diligence.',
       benefits: ['Clean titles', 'Clear access roads', 'Utility connectivity', 'Zoning verified'],
-      outcome: '100% title clarity guaranteed'
+      outcome: '100% title clarity guaranteed',
+      image: '/Land Acquisition.jpg'
     },
     {
       icon: FileCheck,
@@ -19,7 +20,8 @@ const ServicesSection = () => {
       subtitle: 'Negotiation, diligence, and documentation done right.',
       description: 'End-to-end procurement services handling all legal and administrative requirements.',
       benefits: ['Legal verification', 'Price negotiation', 'Document processing', 'Regulatory compliance'],
-      outcome: 'Average 15% cost savings'
+      outcome: 'Average 15% cost savings',
+      image: '/Procurement Services.jpg'
     },
     {
       icon: TrendingUp,
@@ -27,7 +29,8 @@ const ServicesSection = () => {
       subtitle: 'Straightforward exits with qualified buyers.',
       description: 'Strategic sales approach connecting properties with the right buyers for optimal returns.',
       benefits: ['Market analysis', 'Buyer qualification', 'Marketing strategy', 'Deal closure'],
-      outcome: '90-day average sale time'
+      outcome: '90-day average sale time',
+      image: '/sale.jpg'
     },
     {
       icon: Building,
@@ -35,7 +38,8 @@ const ServicesSection = () => {
       subtitle: 'Transforming land potential into sustainable, high-value developments.',
       description: 'Comprehensive development services turning raw land into valuable, sustainable properties.',
       benefits: ['Site planning', 'Infrastructure development', 'Sustainability focus', 'Value optimization'],
-      outcome: '30% higher land value creation'
+      outcome: '30% higher land value creation',
+      image: '/land.jpg'
     }
   ];
 
@@ -56,32 +60,50 @@ const ServicesSection = () => {
           </p>
         </div>
 
+
         <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card key={index} className="property-card border-0 bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-8">
-                  <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary to-accent rounded-2xl">
-                    <IconComponent className="w-8 h-8 text-white" />
+              <Card key={index} className="property-card border-0 bg-card/50 backdrop-blur-sm overflow-hidden group hover:shadow-lg transition-all duration-300">
+                {/* Service Image */}
+                <div className="relative h-48 bg-gray-100">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      console.log('Image failed:', service.image);
+                      e.currentTarget.src = '/hero-land.jpg';
+                    }}
+                    onLoad={() => {
+                      console.log('Image loaded:', service.image);
+                    }}
+                  />
+                  <div className="absolute top-4 left-4">
+                    <div className="flex items-center justify-center w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl">
+                      <IconComponent className="w-6 h-6 text-primary" />
+                    </div>
                   </div>
+                </div>
+                
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                  <p className="text-accent font-semibold mb-3">{service.subtitle}</p>
+                  <p className="text-muted-foreground text-sm mb-4">{service.description}</p>
                   
-                  <h3 className="text-2xl font-bold text-center mb-3">{service.title}</h3>
-                  <p className="text-accent font-semibold text-center mb-4">{service.subtitle}</p>
-                  <p className="text-muted-foreground text-center mb-6">{service.description}</p>
-                  
-                  <div className="space-y-3 mb-6">
+                  <div className="space-y-2 mb-4">
                     {service.benefits.map((benefit, idx) => (
-                      <div key={idx} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></div>
-                        <span className="text-sm text-foreground">{benefit}</span>
+                      <div key={idx} className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0"></div>
+                        <span className="text-xs text-foreground">{benefit}</span>
                       </div>
                     ))}
                   </div>
                   
-                  <div className="text-center pt-4 border-t border-border">
-                    <div className="flex items-center justify-center gap-2 text-primary font-semibold">
-                      <Target className="w-4 h-4" />
+                  <div className="pt-3 border-t border-border">
+                    <div className="flex items-center gap-2 text-primary font-semibold text-sm">
+                      <Target className="w-3 h-3" />
                       {service.outcome}
                     </div>
                   </div>

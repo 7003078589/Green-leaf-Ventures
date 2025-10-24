@@ -24,7 +24,8 @@ const Services = () => {
         "Zoning violations",
         "Access road disputes"
       ],
-      stat: "98% clean title success rate"
+      stat: "98% clean title success rate",
+      image: "/Land Acquisition.jpg"
     },
     {
       title: "Procurement Services",
@@ -42,7 +43,8 @@ const Services = () => {
         "Regulatory compliance issues",
         "Hidden costs and fees"
       ],
-      stat: "Average 15% cost savings"
+      stat: "Average 15% cost savings",
+      image: "/Procurement Services.jpg"
     },
     {
       title: "Sales & Marketing",
@@ -60,7 +62,8 @@ const Services = () => {
         "Below-market pricing",
         "Transaction failures"
       ],
-      stat: "Average 45-day sale cycle"
+      stat: "Average 45-day sale cycle",
+      image: "/sale.jpg"
     },
     {
       title: "Land Development",
@@ -78,7 +81,8 @@ const Services = () => {
         "Environmental compliance issues",
         "Market timing misalignment"
       ],
-      stat: "30% average value uplift"
+      stat: "30% average value uplift",
+      image: "/land.jpg"
     }
   ];
 
@@ -157,12 +161,24 @@ const Services = () => {
                   </div>
                   
                   <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                    <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl p-8 h-80 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                          {React.cloneElement(service.icon, { className: "w-10 h-10 text-primary" })}
+                    <div className="relative rounded-xl overflow-hidden h-80">
+                      <img 
+                        src={service.image} 
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          console.log('Image failed to load:', service.image);
+                          e.currentTarget.src = '/hero-land.jpg';
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                            {React.cloneElement(service.icon, { className: "w-5 h-5 text-white" })}
+                          </div>
+                          <div className="text-white font-semibold text-lg">{service.title}</div>
                         </div>
-                        <div className="text-lg font-semibold">{service.title}</div>
                       </div>
                     </div>
                   </div>
