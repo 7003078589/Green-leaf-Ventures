@@ -210,17 +210,27 @@
     @apply transform scale-105;
   }
 
-  /* Floating Animation for Icons */
+  /* Floating Animation for Icons - Play Once Only */
   .floating-icon {
-    animation: floating 3s ease-in-out infinite;
+    animation: floating 3s ease-in-out;
+    animation-fill-mode: forwards;
   }
 
   @keyframes floating {
-    0%, 100% {
+    0% {
       transform: translateY(0px);
     }
-    50% {
+    25% {
       transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(0px);
+    }
+    75% {
+      transform: translateY(-3px);
+    }
+    100% {
+      transform: translateY(0px);
     }
   }
 }

@@ -16,7 +16,7 @@ const Projects = () => {
       type: "industrial",
       date: "2024-02-15",
       location: "Tumkur, Karnataka",
-      image: "/api/placeholder/400/250",
+      image: "/Industrial Land Development - Tumkur.jpg",
       summary: "50-acre industrial plot with clean title and highway access",
       outcomes: {
         timeToClose: "21 days",
@@ -31,7 +31,7 @@ const Projects = () => {
       type: "residential",
       date: "2024-01-20",
       location: "Sarjapur, Bangalore",
-      image: "/api/placeholder/400/250",
+      image: "/Residential Plot Acquisition - Sarjapur.jpeg",
       summary: "Premium residential plots with BMRDA approval",
       outcomes: {
         timeToClose: "35 days",
@@ -46,7 +46,7 @@ const Projects = () => {
       type: "agricultural",
       date: "2023-12-10",
       location: "Kolar, Karnataka",
-      image: "/api/placeholder/400/250",
+      image: "/Agricultural Land Conversion - Kolar.jpg",
       summary: "200-acre agricultural land with conversion potential",
       outcomes: {
         timeToClose: "45 days",
@@ -61,7 +61,7 @@ const Projects = () => {
       type: "commercial",
       date: "2023-11-05",
       location: "Electronic City, Bangalore",
-      image: "/api/placeholder/400/250",
+      image: "/Commercial Complex Site - Electronic City.jpg",
       summary: "Prime commercial land with IT park development rights",
       outcomes: {
         timeToClose: "28 days",
@@ -76,7 +76,7 @@ const Projects = () => {
       type: "industrial",
       date: "2023-10-15",
       location: "Hosur Road, Bangalore",
-      image: "/api/placeholder/400/250",
+      image: "/Warehouse Development - Hosur Road.jpg",
       summary: "Large format warehouse development opportunity",
       outcomes: {
         timeToClose: "32 days",
@@ -91,7 +91,7 @@ const Projects = () => {
       type: "residential",
       date: "2023-09-20",
       location: "Devanahalli, Bangalore",
-      image: "/api/placeholder/400/250",
+      image: "/Layout Development - Devanahalli.jpg",
       summary: "BMRDA approved layout with airport proximity",
       outcomes: {
         timeToClose: "40 days",
@@ -178,20 +178,25 @@ const Projects = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((project) => (
                 <Card key={project.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                    <div className="text-center">
-                      <MapPin className="w-12 h-12 text-primary mx-auto mb-2" />
-                      <div className="text-sm font-medium">{project.type.charAt(0).toUpperCase() + project.type.slice(1)} Project</div>
+                  <div className="aspect-video relative overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      onError={(e) => {
+                        e.currentTarget.src = '/hero-land.jpg';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute top-4 right-4">
+                      <Badge variant="outline" className="text-xs capitalize bg-white/90 text-primary">
+                        {project.type}
+                      </Badge>
                     </div>
                   </div>
                   
                   <CardHeader>
-                    <div className="flex items-start justify-between gap-3">
-                      <CardTitle className="text-lg leading-tight">{project.title}</CardTitle>
-                      <Badge variant="outline" className="text-xs capitalize">
-                        {project.type}
-                      </Badge>
-                    </div>
+                    <CardTitle className="text-lg leading-tight">{project.title}</CardTitle>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <MapPin className="w-4 h-4" />
                       {project.location}

@@ -6,15 +6,35 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      // Show header when at top
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+        setIsScrolled(false);
+      } else {
+        setIsScrolled(true);
+        
+        // Hide when scrolling down, show when scrolling up
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          setIsVisible(false);
+        } else {
+          setIsVisible(true);
+        }
+      }
+      
+      setLastScrollY(currentScrollY);
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -31,6 +51,8 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
+      isVisible ? 'translate-y-0' : '-translate-y-full'
+    } ${
       isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg border-gray-200' : 'bg-gradient-to-r from-white/90 via-white/80 to-white/70 backdrop-blur-sm border-transparent'
     }`}>
       <div className="container-max px-4 sm:px-6 lg:px-8">
