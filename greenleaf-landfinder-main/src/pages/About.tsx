@@ -6,26 +6,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Award, MapPin, Users, Shield } from 'lucide-react';
 
 const About = () => {
-  const teamMembers = [
-    {
-      name: "Rajesh Kumar",
-      role: "Founder & CEO",
-      experience: "15+ years in real estate",
-      image: "/api/placeholder/150/150"
-    },
-    {
-      name: "Priya Sharma",
-      role: "Head of Acquisitions",
-      experience: "12+ years in land procurement",
-      image: "/api/placeholder/150/150"
-    },
-    {
-      name: "Amit Patel",
-      role: "Legal Advisor",
-      experience: "10+ years in property law",
-      image: "/api/placeholder/150/150"
-    }
-  ];
 
   const credentials = [
     "RERA Registered Real Estate Agent",
@@ -185,32 +165,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team Section */}
-        <section className="section-padding">
-          <div className="container-max">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Meet Our Team</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Experienced professionals dedicated to delivering exceptional results for every client.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {teamMembers.map((member, index) => (
-                <Card key={index} className="text-center">
-                  <CardContent className="p-6">
-                    <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <Users className="w-12 h-12 text-primary" />
-                    </div>
-                    <h3 className="font-semibold text-lg mb-2">{member.name}</h3>
-                    <p className="text-primary font-medium mb-2">{member.role}</p>
-                    <p className="text-sm text-muted-foreground">{member.experience}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Credentials & Service Areas */}
         <section className="section-padding">
