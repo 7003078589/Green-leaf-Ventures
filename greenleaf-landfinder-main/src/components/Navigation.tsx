@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Phone, MessageCircle, Search } from 'lucide-react';
+import { Menu, Phone, MessageCircle } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -50,11 +49,6 @@ const Navigation = () => {
     contactSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Add search functionality here
-    console.log('Search functionality');
-  };
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
@@ -113,18 +107,8 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile Search and Menu - Floating Action Style */}
-          <div className="flex items-center space-x-3 lg:hidden">
-            {/* Search Icon - Floating Action */}
-            <Button 
-              variant="ghost" 
-              size="lg"
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="rounded-full bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-xl border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-all duration-300 hover:scale-110 p-4"
-            >
-              <Search className="w-8 h-8 text-gray-700 hover:text-green-600" />
-            </Button>
-            
+          {/* Mobile Menu - Floating Action Style */}
+          <div className="flex items-center lg:hidden">
             {/* Mobile Menu - Floating Action */}
             <Sheet>
               <SheetTrigger asChild>
@@ -189,38 +173,6 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Mobile Search Bar */}
-      {isSearchOpen && (
-        <div className="lg:hidden border-t border-gray-200 bg-white">
-          <div className="container-max px-4 py-4">
-            <form onSubmit={handleSearch} className="flex items-center space-x-4">
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  placeholder="Search properties, locations, services..."
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                  autoFocus
-                />
-              </div>
-              <Button
-                type="submit"
-                size="sm"
-                className="px-4 py-2"
-              >
-                Search
-              </Button>
-              <Button
-                type="button"
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsSearchOpen(false)}
-              >
-                ✕
-              </Button>
-            </form>
-          </div>
-        </div>
-      )}
     </nav>
   );
 };
