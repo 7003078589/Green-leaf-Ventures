@@ -57,12 +57,19 @@ const Navigation = () => {
     }`}>
       <div className="container-max px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
-          {/* Logo */}
+          {/* Logo - Responsive: Favicon on mobile, Full logo on desktop */}
           <Link to="/" className="flex items-center group">
+            {/* Mobile: Show favicon */}
+            <img 
+              src="/Favicon BG.png" 
+              alt="Green Leaf Ventures" 
+              className="h-8 w-8 sm:hidden object-contain transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-lg"
+            />
+            {/* Desktop: Show full logo */}
             <img 
               src="/lovable-uploads/GVL_LOGO_page-0003.png" 
               alt="Green Leaf Ventures" 
-              className="h-12 w-auto sm:h-16 lg:h-24 object-contain transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-lg"
+              className="hidden sm:block h-12 w-auto sm:h-16 lg:h-24 object-contain transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-lg"
             />
           </Link>
 
@@ -107,7 +114,16 @@ const Navigation = () => {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col space-y-4 mt-8">
+              {/* Mobile Menu Header with Favicon */}
+              <div className="flex items-center mb-6">
+                <img 
+                  src="/Favicon BG.png" 
+                  alt="Green Leaf Ventures" 
+                  className="h-8 w-8 object-contain mr-3"
+                />
+                <span className="text-lg font-bold text-primary">Green Leaf Ventures</span>
+              </div>
+              <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
