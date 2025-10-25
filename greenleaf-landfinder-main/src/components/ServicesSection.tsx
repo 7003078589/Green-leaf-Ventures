@@ -72,13 +72,14 @@ const ServicesSection = () => {
                     src={service.image} 
                     alt={service.title}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    onLoad={(e) => {
+                      e.currentTarget.style.opacity = '1';
+                    }}
                     onError={(e) => {
-                      console.log('Image failed:', service.image);
                       e.currentTarget.src = '/hero-land.jpg';
                     }}
-                    onLoad={() => {
-                      console.log('Image loaded:', service.image);
-                    }}
+                    style={{ opacity: 0, transition: 'opacity 0.3s ease-in-out' }}
                   />
                   <div className="absolute top-4 left-4">
                     <div className="flex items-center justify-center w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl">

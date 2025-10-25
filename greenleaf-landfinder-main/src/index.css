@@ -233,4 +233,43 @@
       transform: translateY(0px);
     }
   }
+
+  /* Image Loading Optimizations */
+  .image-loading {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .image-loaded {
+    opacity: 1;
+  }
+
+  /* Skeleton Loading Animation */
+  @keyframes skeleton-loading {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  /* Optimize image rendering */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    img {
+      image-rendering: auto;
+    }
+  }
 }

@@ -72,6 +72,13 @@ const ProjectsShowcase = () => {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   loading="lazy"
+                  onLoad={(e) => {
+                    e.currentTarget.style.opacity = '1';
+                  }}
+                  onError={(e) => {
+                    e.currentTarget.src = '/hero-land.jpg';
+                  }}
+                  style={{ opacity: 0, transition: 'opacity 0.3s ease-in-out' }}
                 />
                 <div className="absolute top-4 left-4">
                   <Badge 

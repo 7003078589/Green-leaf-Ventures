@@ -47,6 +47,12 @@ const HeroSection = () => {
           src={heroLand} 
           alt="Premium land development by Green Leaf Ventures" 
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+          onLoad={(e) => {
+            e.currentTarget.style.opacity = '1';
+          }}
+          style={{ opacity: 0, transition: 'opacity 0.5s ease-in-out' }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-accent/60"></div>
       </div>
