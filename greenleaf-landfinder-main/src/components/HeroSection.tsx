@@ -1,17 +1,19 @@
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, MapPin, Award, Users } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import heroLand from '@/assets/hero-land.jpg';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToProperties = () => {
-    const propertiesSection = document.getElementById('properties');
-    propertiesSection?.scrollIntoView({ behavior: 'smooth' });
+  const navigateToProjects = () => {
+    navigate('/projects');
   };
 
   // Counter animation function
@@ -52,7 +54,12 @@ const HeroSection = () => {
           onLoad={(e) => {
             e.currentTarget.style.opacity = '1';
           }}
-          style={{ opacity: 0, transition: 'opacity 0.5s ease-in-out' }}
+          style={{ 
+            opacity: 0, 
+            transition: 'opacity 0.3s ease-in-out',
+            willChange: 'opacity',
+            transform: 'translateZ(0)'
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-accent/60"></div>
       </div>
@@ -87,7 +94,7 @@ const HeroSection = () => {
             <button 
               type="button"
               className="px-8 py-6 text-lg font-semibold border-2 border-white text-white hover:bg-accent hover:border-accent hover:text-white min-w-[200px] h-[60px] bg-transparent rounded-md transition-all duration-300 flex items-center justify-center group"
-              onClick={scrollToProperties}
+              onClick={navigateToProjects}
             >
               Browse Land
               <MapPin className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-300" />

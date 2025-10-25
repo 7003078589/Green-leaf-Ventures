@@ -272,4 +272,151 @@
       image-rendering: auto;
     }
   }
+
+  /* Smooth Scrolling Optimizations */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  /* Hardware acceleration for smooth scrolling */
+  .fade-in-up {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Optimize animations for scroll performance */
+  .fade-in-up.visible {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px) translateZ(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) translateZ(0);
+    }
+  }
+
+  /* Reduce motion for better performance */
+  @media (prefers-reduced-motion: reduce) {
+    .fade-in-up {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Optimize scroll performance */
+  * {
+    scroll-behavior: smooth;
+  }
+
+  /* GPU acceleration for better performance */
+  .property-card,
+  .hero-section,
+  .section-padding {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Apple-style Header Animations */
+  .apple-header {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .promo-banner-slide {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .search-slide-down {
+    animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .promo-slide-down {
+    animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Apple-style hover effects */
+  .apple-nav-link {
+    position: relative;
+    transition: color 0.2s ease;
+  }
+
+  .apple-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.3s ease;
+  }
+
+  .apple-nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Mobile optimizations for Apple-style header */
+  @media (max-width: 768px) {
+    .apple-header {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  }
+
+  /* Apple's actual CSS classes */
+  .rs-cardsshelf {
+    display: block;
+    position: relative;
+  }
+
+  .rs-productnav-cardsshelf {
+    background: transparent;
+  }
+
+  .rs-cardsshelf-item {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .rs-cardsshelf-item:hover {
+    text-decoration: none;
+  }
+
+  /* Full screen navigation overlay */
+  .full-screen-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+  }
 }
