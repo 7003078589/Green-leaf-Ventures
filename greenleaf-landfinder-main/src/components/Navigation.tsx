@@ -8,6 +8,7 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -110,7 +111,7 @@ const Navigation = () => {
           {/* Mobile Menu - Floating Action Style */}
           <div className="flex items-center lg:hidden">
             {/* Mobile Menu - Floating Action */}
-            <Sheet>
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button 
                   variant="ghost" 
@@ -140,6 +141,10 @@ const Navigation = () => {
                   <Link
                     key={item.name}
                     to={item.href}
+                    onClick={() => {
+                      // Close mobile menu immediately when link is clicked
+                      setIsMobileMenuOpen(false);
+                    }}
                     className="group flex items-center p-4 rounded-xl bg-white/60 backdrop-blur-sm hover:bg-green-50 hover:shadow-md transition-all duration-300 border border-transparent hover:border-green-200/50"
                   >
                     <div className="w-2 h-2 rounded-full bg-green-500 mr-4 group-hover:bg-green-600 transition-colors"></div>
